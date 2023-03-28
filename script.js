@@ -3,16 +3,35 @@ function calculate(operation) {
     const input2 = document.getElementById("input2").value;
     let result;
     
-    //TODO: uncomment the following code, and validate the numbers are not empty
-    // if (input1 === "" || input2 === "") {
-    //     alert("Please enter both numbers.");
-    //     return;
-    // }
+    if (input1 === "" || input2 === "") {
+        alert("Please enter both numbers.");
+        return;
+    }
 
     const num1 = parseFloat(input1);
     const num2 = parseFloat(input2);
-    //TODO: your code here, add the 2 numbers
-    
+
+    // only adds, trying to add operator mutability
+    // result = num1 + num2;
+
+    // displays text, does not compute code however
+    // result = `${num1} ${operation} ${num2}`;
+
+    // deterministic function
+    switch (operation) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            result = num1 / num2;
+            break;
+    }
 
     document.getElementById("result").textContent = result;
 }

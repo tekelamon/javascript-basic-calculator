@@ -25,6 +25,14 @@ function calculate(operation) {
             result = num1 * num2;
             break;
         case '/':
+            // if division by 0
+            if ( num2 == 0 ) {
+                // warn user
+                alert("Cannot divide by 0");
+                // default value for printing
+                result = 0;
+                break;
+            }
             result = num1 / num2;
             break;
     }

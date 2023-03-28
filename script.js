@@ -3,21 +3,17 @@ function calculate(operation) {
     const input2 = document.getElementById("input2").value;
     let result;
     
+    // verify input
     if (input1 === "" || input2 === "") {
         alert("Please enter both numbers.");
         return;
     }
 
+    // cast type to number
     const num1 = parseFloat(input1);
     const num2 = parseFloat(input2);
 
-    // only adds, trying to add operator mutability
-    // result = num1 + num2;
-
-    // displays text, does not compute code however
-    // result = `${num1} ${operation} ${num2}`;
-
-    // deterministic function
+    // determine which operation to perform
     switch (operation) {
         case '+':
             result = num1 + num2;
@@ -33,5 +29,6 @@ function calculate(operation) {
             break;
     }
 
+    // display output
     document.getElementById("result").textContent = result;
 }
